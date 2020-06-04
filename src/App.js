@@ -1,23 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import AddColorForm from './components/AddColorForm'
+import StarRating from './components/StarRating'
 import './App.css';
+import './components/styles/StarRating.css';
+
+const logColor = (title, color) =>{
+  console.log(`New Color: ${title.value} | ${color.value}`);
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <AddColorForm onNewColor={logColor}></AddColorForm>
+        <StarRating starsSelected={3} totalStars={7}></StarRating>
       </header>
     </div>
   );
